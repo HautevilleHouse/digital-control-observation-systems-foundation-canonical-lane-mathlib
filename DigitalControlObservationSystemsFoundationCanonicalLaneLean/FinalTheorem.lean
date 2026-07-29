@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DigitalControlObservationSystemsFoundationCanonicalLaneLean.DigitalControlObservationFoundation
+import HautevilleHouse.DigitalControlObservationSystemsFoundationCanonicalLaneLean.ObservationErrorDecay
+import HautevilleHouse.DigitalControlObservationSystemsFoundationCanonicalLaneLean.SeparationPrinciple
+
+namespace HautevilleHouse
+namespace DigitalControlObservationSystemsFoundationCanonicalLaneLean
+
+def ConstrainedDigitalControlObservationClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_digital_control_observation_endgame (A : AdmissibleClass) :
+    ConstrainedDigitalControlObservationClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DigitalControlObservationSystemsFoundationCanonicalLaneLean
+end HautevilleHouse
